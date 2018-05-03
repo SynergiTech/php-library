@@ -55,6 +55,9 @@ class Sirportly
             if (curl_error($curl)) {
                 $error .= "\n" . curl_error($curl);
             }
+            if ($result !== false) {
+                $error .= "\n" . $result;
+            }
             throw new SirportlyDefaultException($error);
         }
 

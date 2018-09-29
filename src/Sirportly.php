@@ -188,4 +188,13 @@ class Sirportly
     {
         return $this->query('/api/v2/contacts/all', array('page' => $page));
     }
+
+    /**
+    * Authenticate a user for passthru authentication to a Public Support Centre
+    * @return array        The details for the support centre redirection
+    */
+    public function authentication($params)
+    {
+        return $this->query('/api/v2/authentication/support_centre_token', $params);
+    }
 }
